@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "screenshot": {
+      "command": "uv",
+      "args": ["run", "python", "C:\\Users\\drpoz\\OneDrive\\Desktop\\LangFlow\\screenshot_mcp_server.py"],
+      "cwd": "C:\\Users\\drpoz\\OneDrive\\Desktop\\LangFlow"
+    },
+    "accounts": {
+      "command": "uv",
+      "args": ["run", "accounts_server.py"],
+      "cwd": "C:\\Users\\drpoz\\OneDrive\\Desktop\\LangFlow"
+    }
+  }
+}
