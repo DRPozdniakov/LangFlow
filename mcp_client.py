@@ -30,7 +30,7 @@ async def main():
                 )
             
             with trace("investigate"):
-                result = await Runner.run(agent, "Make a screenshot and confirm that information is received. Can you describe the screenshot in detail? And can you try to save screenshot as a png file? Make unique name for file. Save it in the data folder.")
+                result = await Runner.run(agent, "Make a screenshot and confirm that information is received. Can you describe the screenshot in detail? Save it in the data folder.")
                 print(result.final_output)
 
 if __name__ == "__main__":

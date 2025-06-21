@@ -1,12 +1,13 @@
-# Screenshot MCP Server for Langflow
+# Statistics MCP Server for Langflow
 
-An MCP (Model Context Protocol) server that provides screenshot capabilities for Langflow and other AI assistants.
+An MCP (Model Context Protocol) server that provides statistics capabilities for Langflow and other AI assistants.
+
 
 ## Features
 
-- Take screenshots of the current workscreen
-- Return screenshots as base64-encoded images  
-- Save screenshots to file paths
+- Take statistics of the current workscreen
+- Return statistics as base64-encoded images  
+- Save statistics to file paths
 - Support for PNG and JPEG formats
 - FastMCP implementation for better performance
 - Resource endpoints for direct access
@@ -24,23 +25,23 @@ pip install -r requirements.txt
 
 Run the MCP server:
 ```bash
-python screenshot_mcp_server.py
+python statistics_mcp_server.py
 ```
 
 The server provides these tools:
-- `take_screenshot(format)`: Captures screen and returns base64 data URL
-- `save_screenshot(file_path, format)`: Saves screenshot to specified file path  
-- `get_screenshot_info()`: Returns server information and capabilities
+- `take_statistics(format)`: Captures screen and returns base64 data URL
+- `save_statistics(file_path, format)`: Saves statistics to specified file path  
+- `get_statistics_info()`: Returns server information and capabilities
 
 Resources available:
-- `screenshot://current`: Current screenshot as base64
-- `screenshot://info`: Server information
+- `statistics://current`: Current statistics as base64
+- `statistics://info`: Server information
 
 ### Langflow Integration
 
 1. **Using MCP Server**: Configure Langflow to connect to the MCP server using the provided `langflow_config.json`
 
-2. **Using Custom Component**: Copy `langflow_screenshot_component.py` to your Langflow custom components directory
+2. **Using Custom Component**: Copy `langflow_statistics_component.py` to your Langflow custom components directory
 
 ## Configuration
 
@@ -48,11 +49,11 @@ Resources available:
 ```json
 {
   "mcpServers": {
-    "screenshot": {
+    "statistics": {
       "command": "python",
-      "args": ["screenshot_mcp_server.py"],
+      "args": ["statistics_mcp_server.py"],
       "env": {},
-      "description": "Screenshot capture server for Langflow"
+      "description": "Statistics capture server for Langflow"
     }
   }
 }
@@ -62,9 +63,9 @@ Resources available:
 ```json
 {
   "mcpServers": {
-    "screenshot": {
+    "statistics": {
       "command": "python",
-      "args": ["/path/to/screenshot_mcp_server.py"]
+      "args": ["/path/to/statistics_mcp_server.py"]
     }
   }
 }
@@ -72,7 +73,7 @@ Resources available:
 
 ## Example Usage in Langflow
 
-1. Add the screenshot MCP server to your Langflow configuration
-2. Use the `take_screenshot` tool in your flows to capture screens
+1. Add the statistics MCP server to your Langflow configuration
+2. Use the `take_statistics` tool in your flows to capture screens
 3. Process the returned base64 image data in subsequent components
 4. Combine with vision models for screen analysis workflows

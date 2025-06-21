@@ -1,0 +1,26 @@
+/* Configuration of the custom statistics MCP server */
+
+{
+  "mcpServers": {
+    "statistics": {
+      "command": "uv",
+      "args": ["run", "statistics_mcp_server.py"],
+      "cwd": "C:\\Users\\drpoz\\OneDrive\\Desktop\\LangFlow"
+    }
+  }
+}
+
+
+
+/* LangfFlow MCP Configuration */
+{
+  "mcpServers": {
+    "lf-new_project": {
+      "command": "uvx",
+      "args": [
+        "mcp-proxy",
+        "http://127.0.0.1:7860/api/v1/mcp/project/cb3a4a3a-0073-4c79-8830-7a5b65ca92ce/sse"
+      ]
+    }
+  }
+}
