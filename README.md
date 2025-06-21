@@ -1,5 +1,9 @@
 # Statistics MCP Server for Langflow
 
+## Solution Concept
+
+With Vibe coding it is easy to lose the track how adequate is your code and miss some useless artefacts inside the code. That is as well good when there is some external assessment, which is in our case TurinTech, which can provide to code assistant some metrics. Ideally it can be done as Langflow MCP and integrated into Claude code for example. As well as Mistral models can be used overall for any inferences.
+
 An MCP (Model Context Protocol) server that provides statistics capabilities for Langflow and other AI assistants.
 
 
@@ -17,6 +21,11 @@ An MCP (Model Context Protocol) server that provides statistics capabilities for
 1. Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
+
+2. Set up environment variables (create `.env` file):
+```bash
+
 ```
 
 ## Usage
@@ -39,7 +48,7 @@ Resources available:
 
 ### Langflow Integration
 
-1. **Using MCP Server**: Configure Langflow to connect to the MCP server using the provided `langflow_config.json`
+1. **Using MCP Server**: Configure Langflow to connect to the MCP server using the provided `configs/mcp_configs.json`
 
 2. **Using Custom Component**: Copy `langflow_statistics_component.py` to your Langflow custom components directory
 
@@ -70,6 +79,16 @@ Resources available:
   }
 }
 ```
+
+## Deploy Instructions
+
+1. Load `configs/langflow_chart.json` into Langflow and configure it as an MCP server
+2. Set your desired git repository in the git MCP configuration
+3. Build and run `statistics_mcp_server.py` using uv:
+   ```bash
+   uv run statistics_mcp_server.py
+   ```
+4. Connect the resulting MCP to MCP Servers
 
 ## Example Usage in Langflow
 
